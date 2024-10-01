@@ -50,12 +50,12 @@ docker system prune
 docker image rm imagename  
 
 #To Create EKS cluster
-eksctl create cluster --name kubernetes-cluster --version 1.23 --region us-west-2 --nodegroup-name linux-nodes --node-type t2.xlarge --nodes 2 
+eksctl create cluster --name kubernetes-clusters --version 1.31 --region us-east-1 --nodegroup-name linux-nodes --node-type t2.xlarge --nodes 2 
 
 #To Delete EKS cluster
-eksctl delete cluster --region=us-west-2 --name=kubernetes-cluster #delete eks cluster
+eksctl delete cluster --region=us-east-1 --name=kubernetes-clusters #delete eks cluster
 ```
 
 ## Step 4: Cleanup Terraform Resources
 ```
-terraform destroy -var-file="vars/dev-west-2.tfvars"
+terraform destroy -var-file="vars/dev-east-1.tfvars"
